@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int Fibonacci(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+
+        int fa = 0;
+        int fb = 1;
+        int fn;
+        for (int i = 2; i <= n; i++) {
+            fn = fa + fb;
+            fa = fb;
+            fb = fn;
+        }
+        return fn;
+    }
+};
