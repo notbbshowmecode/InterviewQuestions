@@ -6,7 +6,6 @@ public:
             while (p != array.end() && condition(*p)) {
                 p++;
             }
-
             if (p == array.end()) {
                 break;
             }
@@ -15,7 +14,6 @@ public:
             while (q != array.end() && !condition(*q)) {
                 q++;
             }
-
             if (q == array.end()) {
                 break;
             }
