@@ -13,8 +13,6 @@ public:
             return pHead;
         }
 
-        ListNode* pReverseHead = nullptr;
-
         ListNode* pPrev = nullptr;
         ListNode* pNode = pHead;
         while (pNode != nullptr) {
@@ -23,9 +21,7 @@ public:
             pPrev = pNode;
             pNode = pNext;
         }
-        
-        pReverseHead = pPrev;
 
-        return pReverseHead;
+        return pPrev;
     }
 };
