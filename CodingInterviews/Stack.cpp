@@ -1,23 +1,28 @@
-class Solution
-{
-public:
-    void push(int node) {
-        stack1.push(node);
-    }
-
-    int pop() {
-        if (stack2.empty()) {
-            while (!stack1.empty()) {
-                stack2.push(stack1.top());
-                stack1.pop();
-            }
-        }
-        int node = stack2.top();
-        stack2.pop();
-        return node;
-    }
-
+class Solution {
 private:
-    stack<int> stack1;
-    stack<int> stack2;
+    stack<int> stk;
+    stack<int> minStk;
+
+public:
+    void push(int value) {
+        stk.push(value);
+        if (minStk.empty() || value < minStk.top()) {
+            minStk.push(value);
+            return;
+        }
+        minStk.push(minStk.top());
+    }
+
+    void pop() {
+        stk.pop();
+        minStk.pop();    
+    }
+
+    int top() {
+        return stk.top();
+    }
+
+    int min() {
+        return minStk.top();
+    }
 };
